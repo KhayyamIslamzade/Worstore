@@ -1,0 +1,562 @@
+﻿
+@{
+    ViewData["Title"] = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="section section-tabs">
+    <div class="container">
+        <div class="row">
+            <div class=" col-sm-12 col-md-10   col-xl-8 ">
+                @*<p class="category text-center">Tabs with Background on Card</p>*@
+                <!-- Tabs with Background on Card -->
+                <div class="card " >
+                    
+                    
+                    
+                    
+          
+
+                    <div class="card-header">
+                        <ul class="nav nav-tabs justify-content-center" role="tablist">
+
+
+                            <li class="nav-item">
+                                <a class="nav-link  " data-toggle="tab" href="#addWord" role="tab" aria-selected="false">
+                                    <i class="now-ui-icons ui-1_simple-add"></i> Add Word
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link show active" data-toggle="tab" href="#words" role="tab" aria-selected="true">
+                                    <i class="now-ui-icons objects_planet"></i> Words
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#fromFile" role="tab" aria-selected="false">
+                                    <i class="now-ui-icons files_box"></i> Add From Excel
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body sk-loading" id="spinner">
+                        
+                        
+                        <div class="sk-cube-grid">
+                            <div class="sk-cube sk-cube1"></div>
+                            <div class="sk-cube sk-cube2"></div>
+                            <div class="sk-cube sk-cube3"></div>
+                            <div class="sk-cube sk-cube4"></div>
+                            <div class="sk-cube sk-cube5"></div>
+                            <div class="sk-cube sk-cube6"></div>
+                            <div class="sk-cube sk-cube7"></div>
+                            <div class="sk-cube sk-cube8"></div>
+                            <div class="sk-cube sk-cube9"></div>
+                        </div>
+                        <!-- Tab panes -->
+                        <div class="tab-content ">
+                            <div class="tab-pane " id="addWord" role="tabpanel">
+                                <div class="card card-plain">
+                                    <div class="card-header">
+
+                                    </div>
+                                    <div class="card-body">
+                                        @*<button type="button" class="btn btn-outline-danger btn-round">Danger</button>*@
+
+                                        <div class="row justify-content-md-center">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>
+                                                        Choose a word`s
+                                                        language
+                                                    </label>
+                                                    <select data-placeholder="Choose a language..." class="chosen-select">
+                                                        <option value="AL">Alabama</option>
+                                                        <option value="WY">Wyoming</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-md-center">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label>Word</label>
+                                                    <input type="text" value="" placeholder="Regular" class="form-control  border-4 ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label>Meanings</label>
+                                                    <input type="text" value="" data-role="tagsinput" class=" form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label>Pronunciation</label>
+                                                    <input type="text" value="" placeholder="Regular" class="form-control  border-4 ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label>Tag</label>
+                                                    <input type="text" value="" placeholder="Regular" class="form-control  border-4 ">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="card-footer">
+
+
+
+
+                                        <button class="btn btn-outline-success btn-round btn-lg btn-block">Save</button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="words" role="tabpanel">
+
+
+
+
+                                <table id="wordsTable" class="table table-striped table-bordered" style="width: 100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Tigdasdasdasdasdasdsadasdasda sdasdasdasdasdasdasdasdsader Nixon</td>
+                                        <td>System Architect dasdasd dasdsad dasdasd asdasdasd</td>
+                                        <td>Edinburgh</td>
+                                        <td class="text-center">61</td>
+
+                                    </tr>
+
+                                    </tbody>
+
+                                </table>
+
+
+                            </div>
+                            <div class="tab-pane" id="fromFile" role="tabpanel">
+
+
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                </div>
+                                <div class="form-group mt-5">
+                                    <button class="btn btn-outline-success btn-round pull-right">Save</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Tabs on plain Card -->
+            </div>
+
+            <div class=" col-sm-12 col-md-10  col-xl-4 ml-auto mr-auto">
+       
+                @*<p class="category text-center">Tabs with Background on Card</p>*@
+                <!-- Tabs with Background on Card -->
+                <div class="card " >
+           
+                    
+                    
+             
+                    
+
+                    <div class="card-header">
+
+                    </div>
+                    <div class="card-body " >
+                        
+
+                        
+
+                        <p class="card-title text-center category">Card title</p>
+                        <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+                    </div>
+                </div>
+                <!-- End Tabs on plain Card -->
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+@section Styles
+{
+
+
+
+
+
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />*@
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet"/>
+
+
+
+    <link href="@Url.Content("~/lib/chosen-select/bootstrap-chosen.css")" rel="stylesheet"/>
+    @*<link href="@Url.Content("~/lib/dataTables/datatables.min.css")" rel="stylesheet" />*@
+
+    <link href="@Url.Content("~/lib/bootstrap-tagsinput/tagsinput.css")" rel="stylesheet"/>
+    <link href="@Url.Content("~/lib/dropzone/dropzone.css")" rel="stylesheet"/>
+
+
+
+    <style>
+        tbody {
+            font-size: 12px;
+        }
+
+        thead {
+            font-size: 14px;
+        }
+
+        .custom-file-label {
+            color: #6bd098;
+            /*border: 0px !important;
+            border-bottom: 1px solid #ced4da !important;*/
+        }
+            .custom-file-label::after {
+                color: #fff;
+                font-weight: 400;
+                font-size: 14px;
+                background-color: #6bd098;
+                border-left: 1px solid #ced4da;
+             
+            }
+
+
+
+
+
+
+        .card-body .sk-loading .sk-cube-grid {
+            display: none;
+        }
+        .card-body.sk-loading {
+            position: relative;
+        }
+            .card-body.sk-loading:after {
+                content: '';
+                background-color: rgba(255, 255, 255, 0.7);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            /*.card-body.sk-loading  .sk-spinner {
+                display: block;
+                position: absolute;
+                top: 40%;
+                left: 0;
+                right: 0;
+                z-index: 2000;
+            }*/
+
+
+          .sk-loading .sk-cube-grid {
+                width: 40px;
+                height: 40px;
+                display: block;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2000;
+            }
+
+        .sk-cube-grid .sk-cube {
+            width: 33%;
+            height: 33%;
+            background-color: #6bd098;
+            float: left;
+            -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+            animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+        }
+        .sk-cube-grid .sk-cube1 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+        .sk-cube-grid .sk-cube2 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+        .sk-cube-grid .sk-cube3 {
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s; }
+        .sk-cube-grid .sk-cube4 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+        .sk-cube-grid .sk-cube5 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+        .sk-cube-grid .sk-cube6 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+        .sk-cube-grid .sk-cube7 {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s; }
+        .sk-cube-grid .sk-cube8 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+        .sk-cube-grid .sk-cube9 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+
+        @@-webkit-keyframes sk-cubeGridScaleDelay {
+        0%, 70%, 100% {
+            -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+        } 35% {
+              -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1); 
+          }
+        }
+
+        @@keyframes sk-cubeGridScaleDelay {
+        0%, 70%, 100% {
+            -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+        } 35% {
+              -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1);
+          } 
+        }
+
+
+
+
+
+
+
+
+
+
+#loader {
+    bottom: 0;
+    height: 80px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+}
+
+#loader .dot {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+}
+#loader .dot::before {
+    border-radius: 100%;
+    content: "";
+    height: 40px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(0);
+    width: 40px;
+}
+#loader .dot:nth-child(7n+1) {
+    transform: rotate(45deg);
+}
+#loader .dot:nth-child(7n+1)::before {
+    animation: 0.8s linear 0.1s normal none infinite running load;
+    background: #00ff80 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+2) {
+    transform: rotate(90deg);
+}
+#loader .dot:nth-child(7n+2)::before {
+    animation: 0.8s linear 0.2s normal none infinite running load;
+    background: #00ffea none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+3) {
+    transform: rotate(135deg);
+}
+#loader .dot:nth-child(7n+3)::before {
+    animation: 0.8s linear 0.3s normal none infinite running load;
+    background: #00aaff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+4) {
+    transform: rotate(180deg);
+}
+#loader .dot:nth-child(7n+4)::before {
+    animation: 0.8s linear 0.4s normal none infinite running load;
+    background: #0040ff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+5) {
+    transform: rotate(225deg);
+}
+#loader .dot:nth-child(7n+5)::before {
+    animation: 0.8s linear 0.5s normal none infinite running load;
+    background: #2a00ff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+6) {
+    transform: rotate(270deg);
+}
+#loader .dot:nth-child(7n+6)::before {
+    animation: 0.8s linear 0.6s normal none infinite running load;
+    background: #9500ff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+7) {
+    transform: rotate(315deg);
+}
+#loader .dot:nth-child(7n+7)::before {
+    animation: 0.8s linear 0.7s normal none infinite running load;
+    background: magenta none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+8) {
+    transform: rotate(360deg);
+}
+#loader .dot:nth-child(7n+8)::before {
+    animation: 0.8s linear 0.8s normal none infinite running load;
+    background: #ff0095 none repeat scroll 0 0;
+}
+#loader .lading {
+    background-image: url("../images/loading.gif");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: -40px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 180px;
+}
+@@keyframes load {
+100% {
+    opacity: 0;
+    transform: scale(1);
+}
+}
+@@keyframes load {
+100% {
+    opacity: 0;
+    transform: scale(1);
+}
+}
+
+
+
+    </style>
+}
+@section Scripts
+    {
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>*@
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    
+
+    <script src="@Url.Content("~/lib/chosen-select/chosen.jquery.js")"></script>
+
+
+    <script src="@Url.Content("~/lib/bootstrap-tagsinput/tagsinput.js")"></script>
+    <script src="@Url.Content("~/lib/dropzone/dropzone.js")"></script>
+
+    <script>
+        $( document ).ready( function ()
+        {
+            $("input[id=validatedCustomFile]").change(function () {
+               
+                var fieldVal = $( this ).val();
+                fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+                if ( fieldVal != undefined || fieldVal != "" )
+                {
+
+                    $( this ).next(".custom-file-label").text( fieldVal);
+                }
+
+            });
+
+
+         
+
+
+            $( '#wordsTable' ).DataTable( {
+
+                pageLength: 25,
+                responsive: true,
+
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                dom: 'B <"row"<"col-md-6"l><"col-md-6"f>>rtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        text: 'Export Excel',
+                        className: 'btn btn-outline-danger  btn-round',
+                        filename: 'Export excel',
+                        exportOptions: {
+                            modifier: {
+                                page: 'all'
+                            }
+                        }
+                    },
+                ]
+
+                //dom: '<"btn btn-outline-danger "B>lTfgitp',
+
+            } );
+
+
+            $( ".chosen-select" ).chosen( { width: "100%" } );
+
+            $('#spinner').toggleClass('sk-loading');
+
+
+
+
+        } );
+    </script>
+
+}

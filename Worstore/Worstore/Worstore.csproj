@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-CoreLayeredArchitecture-0CDB71BA-C23A-4398-8104-DE2BF9D40433</UserSecretsId>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Content Remove="Data\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <None Remove="Data\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="NPOI.Core.Extension" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\bootstrap-datepicker\bootstrap-datepicker.js" />
+    <None Include="wwwroot\lib\bootstrap-switch\bootstrap-switch.js" />
+    <None Include="wwwroot\lib\nouislider\nouislider.min.js" />
+    <None Include="wwwroot\scss\now-ui-kit.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\cards\_card-plain.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\cards\_card-signup.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_badges.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_buttons.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_cards.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_datepicker.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_dropdown.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_inputs.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_modals.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_navbar.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_pages.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_popovers.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_transparency.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\mixins\_vendor-prefixes.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\plugins\_plugin-bootstrap-switch.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\plugins\_plugin-datepicker.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\plugins\_plugin-nouislider.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_alerts.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_badges.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_buttons.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_cards.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_carousel.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_checkboxes-radio.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_dropdown.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_example-pages.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_footers.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_images.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_inputs.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_misc.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_mixins.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_modals.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_navbar.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_nucleo-outline.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_pagination.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_pills.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_popups.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_progress.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_responsive.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_sections.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_tabs.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_typography.scss" />
+    <None Include="wwwroot\scss\now-ui-kit\_variables.scss" />
+  </ItemGroup>
+
+</Project>
