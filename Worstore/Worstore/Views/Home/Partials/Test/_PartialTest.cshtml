@@ -1,0 +1,35 @@
+﻿@model Worstore.Models.HomeViewModels.GameWordViewModel
+
+
+
+
+<div class="row animated rubberBand game-content">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6">
+        <div class="form-group">
+            <div class="nk-int-st">
+                <input type="text" name="FkWord" value="@Model.Id" hidden disabled readonly>
+                <input type="text" class="form-control" placeholder="col-lg-6" value="@Model.Label" readonly>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6">
+        <div class="form-group">
+            <div class="nk-int-st">
+                <input type="text" name="Reply" class="form-control" placeholder="Type mean of Word">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+        <div class="form-group">
+            <div class="button-icon-btn floatleft">
+
+                <button class="btn btn-default btn-icon-notika waves-effect check-answer"><i class="notika-icon notika-checked"></i> Check</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

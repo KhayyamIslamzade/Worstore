@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using Worstore.Helpers.Enums;
 
 namespace Worstore.Entities
 {
     [Table("SpokenLanguage")]
     public class SpokenLanguage
     {
+
+        public SpokenLanguage()
+        {
+            Status = (int)GeneralEnums.RecordStatus.Active;
+        }
         [Key]
         public int Id { get; set; }
 
@@ -22,6 +26,12 @@ namespace Worstore.Entities
 
         public string FlagUrl { get; set; }
 
-        public virtual ICollection<Group> Groups { get; set; }
+        public int Status { get; set; }
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateModified { get; set; }
+        public DateTime? DateDeleted { get; set; }
+
+
+        public ICollection<Group> Groups { get; set; }
     }
 }

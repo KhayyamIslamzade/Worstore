@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using Worstore.Entities;
 
 namespace Worstore.Helpers.Functions
 {
+
+
+
     public class WordHelperFunctions
     {
 
@@ -15,27 +17,37 @@ namespace Worstore.Helpers.Functions
 
         }
 
+
         public List<Meaning> StringToList(string meaning)
         {
-            List <Meaning> List=new List<Meaning>();
-            int startIndex=0;
-            int endIndex=0;
+
+
+            string[] lines = Regex.Split(meaning, "\n");
+            List<Meaning> List = new List<Meaning>();
+            int startIndex = 0;
+            int endIndex = 0;
             meaning += meaning + ",";
             for (int i = 0; i < meaning.Length; i++)
             {
                 if (meaning[i] == ',')
                 {
-                    endIndex = i- startIndex;
+                    endIndex = i - startIndex;
                     var _meaning = meaning.Substring(startIndex, endIndex);
 
-                    List.Add(new Meaning(){Label = _meaning });
+                    List.Add(new Meaning() { Label = _meaning });
 
 
-                    startIndex = i+1;
+                    startIndex = i + 1;
                 }
             }
 
             return List;
         }
+
+        //public string HashWordLabel(string label)
+        //{
+        //    Random random = new Random();
+        //    int countOfStar = random.Next(1, label.Length/2);
+        //}
     }
 }

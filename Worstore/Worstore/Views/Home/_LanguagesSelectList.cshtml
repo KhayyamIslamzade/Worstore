@@ -1,12 +1,11 @@
 ﻿@model List<Worstore.Models.GeneralModels.SpokenLanguageViewModel>
-@{
 
-}
-<select name="FkLanguage" data-placeholder="Choose a language..." class="chosen-select input-group-sm">
 
-    @foreach (var item in Model)
-    {
-        <option value="@item.Id">@item.Label</option>
-    }
-
-</select>
+<div class="chosen-select-act fm-cmp-mg">
+    <select class="chosen" name="FkLanguage" data-placeholder="Choose a Country...">
+        @foreach (var item in Model)
+        {
+            <option value="@item.Id">@item.Label</option>
+        }
+    </select>
+</div>

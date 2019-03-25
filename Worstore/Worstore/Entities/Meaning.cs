@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Worstore.Helpers.Enums;
 
 namespace Worstore.Entities
 {
     public class Meaning
     {
+        public Meaning()
+        {
+            Status = (int)GeneralEnums.RecordStatus.Active;
+        }
         [Key]
         public int Id { get; set; }
 
@@ -17,13 +18,14 @@ namespace Worstore.Entities
         [StringLength(100)]
         public string Label { get; set; }
 
-        [BindNever]
-        [StringLength(30)]
-        public string AddedTime { get; set; }
+        public int Status { get; set; }
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateModified { get; set; }
+        public DateTime? DateDeleted { get; set; }
 
         [ForeignKey("Word")]
         [Required]
         public int FkWord { get; set; }
-        public virtual Word Word { get; set; }
+        public Word Word { get; set; }
     }
 }

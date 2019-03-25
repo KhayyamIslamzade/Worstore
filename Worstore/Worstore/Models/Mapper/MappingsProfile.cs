@@ -8,12 +8,14 @@ using Worstore.Models.HomeViewModels;
 
 namespace Worstore.Models.Mapper
 {
+
     public class MappingsProfile : Profile
     {
         public MappingsProfile()
         {
-            CreateMap<WordViewModel, Word> ();
+            CreateMap<WordViewModel, Word>();
+            CreateMap<Word, GameWordViewModel>();
         }
-      
+
     }
 }

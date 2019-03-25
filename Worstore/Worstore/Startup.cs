@@ -36,7 +36,8 @@ namespace Worstore
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
-            services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
+            services.AddAutoMapper();
+            ////services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
 
             services.AddTransient<UserResolverService>();//Get current User
         }

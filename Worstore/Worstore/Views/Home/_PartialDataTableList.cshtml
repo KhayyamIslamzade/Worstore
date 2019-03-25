@@ -1,0 +1,242 @@
+﻿@model Worstore.Models.HomeViewModels.ReadExcelFileViewModel
+
+
+@{
+    int sheetCounter = 0;
+}
+
+<div class="widget-tabs-list">
+
+
+    <ul class="nav nav-tabs">
+        @foreach (var sheet in Model.excelData)
+        {
+
+            if (sheetCounter == 0)
+            {
+                <li class="active"><a data-toggle="tab" href="#tab-@(sheetCounter)" aria-expanded="true">@sheet.SheetLabel</a></li>
+            }
+            else
+            {
+                <li class=""><a data-toggle="tab" href="#tab-@(sheetCounter)" aria-expanded="true">@sheet.SheetLabel</a></li>
+            }
+
+
+
+            sheetCounter++;
+        }
+        @{
+            sheetCounter = 0;
+        }
+    </ul>
+
+
+    <div class="tab-content tab-custom-st objectList" name-header="data">
+
+
+        @foreach (var item in Model.excelData)
+        {
+
+
+            <div id="tab-@(sheetCounter)" class="tab-pane fade @(sheetCounter == 0 ? "active" : "") in">
+                <div class="tab-ctn">
+                    <h5>Options</h5>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  objectChild" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #00c292;">
+
+
+
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+
+                                <div class="form-example-int form-example-st">
+
+                                    <div class="form-group">
+                                        <label>
+                                            Set <span style="color: #00c292;">Group</span> Name
+                                        </label>
+                                        <div class="nk-int-st">
+
+                                            <input type="text" class="form-control " name="NewSheetLabel" placeholder="Group Name" value="@item.SheetLabel">
+
+                                            <input type="text" name="OldSheetLabel" hidden readonly placeholder="Group Name" value="@item.SheetLabel">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15 mg-b-15">
+
+                                <div class="form-example-int form-example-st">
+
+                                    <div class="form-group">
+                                        <label>
+                                            Language
+                                        </label>
+                                        <div class="nk-int-st">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="SheetLanguage" data-placeholder="Choose a Country...">
+                                                    @foreach (var language in Model.Languages)
+                                                    {
+                                                        <option value="@language.Id">@language.Label</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15 ">
+
+                                <div class="form-example-int form-example-st">
+
+                                    <div class="form-group">
+                                        <label>
+                                            Set <span style="color: #00c292;">Word</span> Column
+                                        </label>
+                                        <div class="nk-int-st">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="WordColumnName" data-placeholder="Choose a Country...">
+                                                    @foreach (var header in item.ExcelHeader)
+                                                    {
+                                                        <option value="@header">@header</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15 ">
+
+                                <div class="form-example-int form-example-st">
+
+                                    <div class="form-group">
+                                        <label>
+                                            Set <span style="color: #00c292;">Meanings</span> Column
+                                        </label>
+                                        <div class="nk-int-st">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="MeaningsColumnName" data-placeholder="Choose a Country...">
+                                                    @foreach (var header in item.ExcelHeader)
+                                                    {
+                                                        <option value="@header">@header</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+
+                                <div class="form-example-int form-example-st">
+
+                                    <div class="form-group">
+                                        <label>
+                                            Set <span style="color: #00c292;">Pronunciation</span>Column
+                                        </label>
+                                        <div class="nk-int-st">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="PronunciationColumnName" data-placeholder="Choose a Country...">
+                                                    @foreach (var header in item.ExcelHeader)
+                                                    {
+                                                        <option value="@header">@header</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+
+                                <div class="form-example-int form-example-st">
+
+                                    <div class="form-group">
+                                        <label>
+                                            Set <span style="color: #00c292;">Tag</span>Column
+                                        </label>
+                                        <div class="nk-int-st">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="TagColumnName" data-placeholder="Choose a Country...">
+                                                    @foreach (var header in item.ExcelHeader)
+                                                    {
+                                                        <option value="@header">@header</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <hr>
+                    <h5>Excel Data Content</h5>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+
+
+                        <table class="table table-striped ">
+                            <thead>
+                                <tr>
+                                    @foreach (var header in item.ExcelHeader)
+                                    {
+                                        <th>@header</th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var row in item.ExcelRow)
+                                {
+                                    <tr>
+                                        @foreach (var cell in row.ExcelCell)
+                                        {
+                                            <td>@cell</td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    @foreach (var header in item.ExcelHeader)
+                                    {
+                                        <th>@header</th>
+                                    }
+                                </tr>
+                            </tfoot>
+
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+            sheetCounter++;
+        }
+
+    </div>
+
+
+
+</div>

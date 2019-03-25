@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Worstore.Entities;
 
@@ -26,9 +23,10 @@ namespace Worstore.AccessLayer.Entity
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
+        public DbSet<Group> Groups { get; set; }
         public DbSet<SpokenLanguage> SpeekingLanguage { get; set; }
         public DbSet<Word> Word { get; set; }
         public DbSet<Meaning> Meaning { get; set; }
-  
+
     }
 }

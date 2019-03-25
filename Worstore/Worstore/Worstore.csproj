@@ -13,6 +13,10 @@
     <None Remove="Data\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entities\Company.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
@@ -76,6 +80,18 @@
     <None Include="wwwroot\scss\now-ui-kit\_tabs.scss" />
     <None Include="wwwroot\scss\now-ui-kit\_typography.scss" />
     <None Include="wwwroot\scss\now-ui-kit\_variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\Partials\Test\_PartialTest.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Home\_PartialError.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Home\_PartialDataTableList.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>

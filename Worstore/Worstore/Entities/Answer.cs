@@ -6,36 +6,39 @@ using Worstore.Helpers.Enums;
 
 namespace Worstore.Entities
 {
-    [Table("Group")]
-    public class Group
+    [Table("Answer")]
+    public class Answer
     {
-        public Group()
+        public Answer()
         {
             Status = (int)GeneralEnums.RecordStatus.Active;
-            Word = new HashSet<Word>();
+            IsTestTrue = false;
+
+            //TODO: DEFINE ENUM CLASS
+            TestType = 1;
         }
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Label { get; set; }
+        [StringLength(255)]
+        public string Reply { get; set; }
+        public int TestType { get; set; }
+        public bool IsTestTrue { get; set; }
 
         public int Status { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DateModified { get; set; }
         public DateTime? DateDeleted { get; set; }
-        [ForeignKey("SpokenLanguage")]
-        [Required]
-        public int FkLanguage { get; set; }
 
-        [ForeignKey("User")]
-        [Required]
-        public string FkUser { get; set; }
 
-        public ApplicationUser User { get; set; }
-        public SpokenLanguage SpokenLanguage { get; set; }
+        [ForeignKey("Word")]
+        public int FkWord { get; set; }
+        public Word Word { get; set; }
 
-        public ICollection<Word> Word { get; set; }
+
+
+
+
     }
 }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Worstore.Models.GeneralHelperFunctionModels
 {
     public class ExcelSheet
     {
-        public string SheetLabel { get; set; }
-        public List<ExcelRow> ExcelRow { get; set; }
+        public string SheetLabel { get; set; } //group
         public List<string> ExcelHeader { get; set; }
+        public List<ExcelRow> ExcelRow { get; set; }
+
     }
     public class ExcelRow
     {

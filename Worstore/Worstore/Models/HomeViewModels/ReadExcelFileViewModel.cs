@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using Worstore.Models.GeneralHelperFunctionModels;
 using Worstore.Models.GeneralModels;
 
 namespace Worstore.Models.HomeViewModels
 {
-    public class HomeIndexViewModel
+    public class ReadExcelFileViewModel
     {
         public List<SpokenLanguageViewModel> Languages { get; set; }
-        public WordViewModel Word { get; set; }
+        public List<ExcelSheet> excelData { get; set; }
     }
 }

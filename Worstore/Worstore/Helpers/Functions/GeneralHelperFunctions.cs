@@ -26,16 +26,16 @@ namespace Worstore.Helpers.Functions
 
 
         //}
-        public static List<ExcelSheet> ResolveExcelFile(IFormFile excelFIle , string hostingEnvironment)
+        public static List<ExcelSheet> ResolveExcelFile(IFormFile excelFIle, string hostingEnvironment)
         {
-            List<ExcelSheet> GroupOfWord=new List<ExcelSheet>();
+            List<ExcelSheet> GroupOfWord = new List<ExcelSheet>();
             if (excelFIle.Length > 0)
             {
                 IWorkbook workbook = null;
                 string fileExtension = Path.GetExtension(excelFIle.FileName).ToLower();
                 ISheet sheet = null;
 
-               
+
 
 
                 if (fileExtension == ".xls" || fileExtension == ".xlsx")
@@ -62,7 +62,7 @@ namespace Worstore.Helpers.Functions
 
         public static List<ExcelSheet> ReadExcelFile(IWorkbook workbook)
         {
-            List<ExcelSheet> GroupOfWord=new List<ExcelSheet>();//Entity Model
+            List<ExcelSheet> GroupOfWord = new List<ExcelSheet>();//Entity Model
 
 
             List<ExcelRow> _row;//temporary object
@@ -75,7 +75,7 @@ namespace Worstore.Helpers.Functions
                 ISheet sheet = workbook.GetSheetAt(sheetNo);
                 _row = new List<ExcelRow>();
 
-                int headingSize = sheet.GetRow(sheet.FirstRowNum).Count()-1;
+                int headingSize = sheet.GetRow(sheet.FirstRowNum).Count() - 1;
 
                 #region Read Sheet Header
 
@@ -140,8 +140,8 @@ namespace Worstore.Helpers.Functions
                 }
 
                 #endregion
-             
-                GroupOfWord.Add(new ExcelSheet(){ExcelRow = _row ,SheetLabel = sheet.SheetName ,ExcelHeader = _sheetHeader});
+
+                GroupOfWord.Add(new ExcelSheet() { ExcelRow = _row, SheetLabel = sheet.SheetName, ExcelHeader = _sheetHeader });
 
 
 

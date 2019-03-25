@@ -2,40 +2,43 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Worstore.Helpers.Functions;
+using Worstore.Helpers.Enums;
 
 namespace Worstore.Entities
 {
     [Table("Word")]
     public class Word
     {
-   
+        public Word()
+        {
+            Status = (int)GeneralEnums.RecordStatus.Active;
+            Meanings = new HashSet<Meaning>();
+            Answers = new HashSet<Answer>();
+        }
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(255)]
         public string Label { get; set; }
-        [StringLength(100)]
+        [StringLength(255)]
         public string Pronunciation { get; set; }
-        [StringLength(50)]
+        [StringLength(255)]
         public string Tag { get; set; }
 
-        [BindNever]
-        [StringLength(30)]
-        public string AddedTime { get; set; }
+        public int Status { get; set; }
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateModified { get; set; }
+        public DateTime? DateDeleted { get; set; }
 
 
         [ForeignKey("Group")]
-        [Required]
         public int FkGroup { get; set; }
 
-        public virtual ICollection<Meaning> Meanings { get; set; }
+        public ICollection<Meaning> Meanings { get; set; }
+        public ICollection<Answer> Answers { get; set; }
 
-        public virtual Group Group { get; set; }
+        public Group Group { get; set; }
 
 
 

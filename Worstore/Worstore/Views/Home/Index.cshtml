@@ -7,607 +7,324 @@
 
 
 
-<div class="section section-tabs">
-    <div class="container">
-        <div class="row">
-            <div class=" col-sm-12 col-md-10   col-xl-8 ">
-                @*<p class="category text-center">Tabs with Background on Card</p>*@
-                <!-- Tabs with Background on Card -->
-                <div class="card ">
-
-
-
-
-
-
-                    <div class="card-header">
-                        <ul class="nav nav-tabs justify-content-center" role="tablist">
-
-
-                            <li class="nav-item">
-                                <a class="nav-link  " data-toggle="tab" href="#addWord" role="tab" aria-selected="false">
-                                    <i class="now-ui-icons ui-1_simple-add"></i> Add Word
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link show active" data-toggle="tab" href="#words" role="tab" aria-selected="true">
-                                    <i class="now-ui-icons objects_planet"></i> Words
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#formFile" role="tab" aria-selected="false">
-                                    <i class="now-ui-icons files_box"></i> Add From Excel
-                                </a>
-                            </li>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="widget-tabs-int mg-t-30">
+            <div class="tab-hd">
+                <h2>Tabs With animations</h2>
+                <p>You may add optional animation classes to animate the tab panes when switching. Please refer the Animations page to get all the available classes <a target="_blank" href="https://daneden.github.io/animate.css/">Click Here</a>.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="widget-tabs-list tab-pt-mg">
+                        <ul class="nav nav-tabs tab-nav-center">
+                            <li class="active"><a data-toggle="tab" href="#home3">Add Simple Word</a></li>
+                            <li><a data-toggle="tab" href="#menu13">Add Words From Excel</a></li>
+                            <li><a data-toggle="tab" href="#menu23">Tab Menu 3</a></li>
                         </ul>
-                    </div>
-                    <div class="card-body sk-loading" id="spinner">
+                        <div class="tab-content tab-custom-st">
+                            <div id="home3" class="tab-pane in active animated zoomInLeft">
+                                <div class="tab-ctn">
 
 
 
 
+                                    <div class="row">
 
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+                                            <div class="form-example-int form-example-st">
 
-
-                        <div class="sk-cube-grid">
-                            <div class="sk-cube sk-cube1"></div>
-                            <div class="sk-cube sk-cube2"></div>
-                            <div class="sk-cube sk-cube3"></div>
-                            <div class="sk-cube sk-cube4"></div>
-                            <div class="sk-cube sk-cube5"></div>
-                            <div class="sk-cube sk-cube6"></div>
-                            <div class="sk-cube sk-cube7"></div>
-                            <div class="sk-cube sk-cube8"></div>
-                            <div class="sk-cube sk-cube9"></div>
-                        </div>
-                        <!-- Tab panes -->
-                        <div class="tab-content ">
-                            <div class="tab-pane " id="addWord" role="tabpanel">
-
-                                <form asp-action="AddWord" method="post">
-                                    <div class="card card-plain">
-                                        <div class="card-header">
-
-                                        </div>
-                                        <div class="card-body">
-                                            @*<button type="button" class="btn btn-outline-danger btn-round">Danger</button>*@
-
-
-                                            <div class="row justify-content-md-center">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>
-                                                            Choose a word`s
-                                                            language
-                                                        </label>
+                                                <div class="form-group">
+                                                    <label>
+                                                        Choose a word`s
+                                                        language
+                                                    </label>
+                                                    <div class="nk-int-st">
                                                         @Html.Partial("_LanguagesSelectList", Model.Languages)
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="row justify-content-md-center">
-                                                <div class="col-md-6">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+                                            <div class="form-example-int form-example-st">
 
-                                                    <div class="form-group">
-                                                        <label>Word</label>
-
-                                                        <input asp-for="@Model.Word.Label" name="Label" class="form-control form-control-sm border-4" />
-
-                                                        @*<input type="text" name="Label" value="" placeholder="Regular" class="form-control  border-4 ">*@
+                                                <div class="form-group">
+                                                    <label> Word</label>
+                                                    <div class="nk-int-st">
+                                                        <input type="text" class="form-control input-sm" name="Label" placeholder="Enter Word">
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-
-                                                    <div class="form-group">
-                                                        <label>Meanings</label>
-                                                        <input asp-for="@Model.Word.MeaningsString" name="MeaningsString" class="form-control " data-role="tagsinput" />
-                                                        @*<input type="text" name="Meanings" value="" data-role="tagsinput" class=" form-control">*@
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-
-                                                    <div class="form-group">
-                                                        <label>Pronunciation</label>
-                                                        <input asp-for="@Model.Word.Pronunciation" name="Pronunciation" class="form-control  border-4 " />
-                                                        @*<input type="text" name="Pronunciation" value="" placeholder="Regular" class="form-control  border-4 ">*@
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-
-                                                    <div class="form-group">
-                                                        <label>Group</label>
-                                                        <input asp-for="@Model.Word.FkGroup" name="FkGroup" class="form-control  border-4 " />
-                                                        @*<input type="text" value="" placeholder="Regular" class="form-control  border-4 ">*@
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-md-6">
-
-                                                    <div class="form-group">
-                                                        <label>Tag</label>
-                                                        <input asp-for="@Model.Word.Tag" name="Tag" class="form-control  border-4 " />
-                                                        @*<input type="text" value="" placeholder="Regular" class="form-control  border-4 ">*@
-                                                    </div>
-
                                                 </div>
                                             </div>
-
-
-
-
-
                                         </div>
-                                        <div class="card-footer">
 
 
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+                                            <div class="form-example-int form-example-st">
 
-
-                                            <button type="submit" class="btn btn-outline-success btn-round btn-lg btn-block">Save</button>
-
-
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="tab-pane active" id="words" role="tabpanel">
-
-
-
-
-                                <table id="wordsTable" class="table table-striped table-bordered compact display" style="width: 100%">
-                                    <thead>
-                                        <tr>
-                                            <th>Label</th>
-                                            <th>Pronunciation</th>
-                                            <th>Meaning</th>
-                                            <th>Tag</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tigdasdasdasdasdasdsadasdasda sdasdasdasdasdasdasdasdsader Nixon</td>
-                                            <td>System Architect dasdasd dasdsad dasdasd asdasdasd</td>
-                                            <td>Edinburgh</td>
-                                            <td class="text-center">61</td>
-
-                                        </tr>
-
-                                    </tbody>
-
-                                </table>
-
-
-                            </div>
-                            <div class="tab-pane" id="formFile" role="tabpanel">
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form asp-action="AddExcelFile" method="post" enctype="multipart/form-data">
-
-
-                                            <div class="row justify-content-md-center">
-                                                <div class="col-md-9">
-                                                    <div class="form-group ">
-                                                        <input type="file" class="custom-file-input" id="excelFile" name="excelFile" required>
-                                                        <label class="custom-file-label" for="excelFile">Choose file...</label>
-
+                                                <div class="form-group">
+                                                    <label> Meanings</label>
+                                                    <div class="nk-int-st">
+                                                        <input type="text" class="form-control input-sm" name="MeaningsString" placeholder="Enter Meanings">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-
-                                                    <button type="button" id="excelUpload" class="btn btn-outline-success btn-round mt-0 pull-right">Upload</button>
-
-                                                </div>
                                             </div>
-
-
-
-
-
-                                        </form>
-                                    </div>
-                                    <hr />
-                                    <div class="col-md-12">
-                                        <div class="container-fluid" id="excelFileContent">
-
-
-
                                         </div>
                                     </div>
+                                    <div class="row">
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+                                            <div class="form-example-int form-example-st">
+                                                <div class="form-group">
+                                                    <label> Pronunciation</label>
+                                                    <div class="nk-int-st">
+                                                        <input type="text" class="form-control input-sm" name="Pronunciation" placeholder="Enter Pronunciation">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+                                            <div class="form-example-int form-example-st">
+                                                <div class="form-group">
+
+
+                                                    <label> Group</label>
+                                                    <div class="nk-int-st">
+                                                        <input type="text" class="form-control input-sm" name="FkGroup" placeholder="Enter Group">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mg-t-15">
+                                            <div class="form-example-int form-example-st">
+                                                <div class="form-group">
+                                                    <label> Tag</label>
+                                                    <div class="nk-int-st">
+                                                        <input type="text" class="form-control input-sm" name="Tag" placeholder="Enter Tag">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mg-t-15">
+                                            <div class="form-example-int">
+                                                <button class="btn btn-success notika-btn-success waves-effect  pull-right">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
                                 </div>
+                            </div>
+                            <div id="menu13" class="tab-pane animated zoomInLeft">
+                                <div class="tab-ctn">
+
+
+
+                                    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="AddExcelFileContent">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                            <div class="form-group ic-cmp-int">
+                                                <div class="form-ic-cmp">
+                                                    <div id="fileBtn" class="file btn btn-primary notika-btn-primary waves-effect mg-t-10">
+                                                        Choose File
+
+                                                        <input type="file" class="form-control " name="excelFile" id="file" placeholder="Full Name">
+                                                    </div>
+                                                </div>
+                                                <div class="nk-int-st " id="customFile">
+                                                    <input type="text" class="form-control " id="file-label" readonly placeholder="Full Name">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <button type="button" class="btn btn-success notika-btn-success waves-effect mg-t-10" id="submit-file">Submit</button>
+                                        </div>
+
+                                        <div class="modal animated rubberBand" id="table-modal" role="dialog" style="display: none;">
+                                            <div class="modal-dialog modal-large nk-red">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h2>Modal title</h2>
+
+                                                        <div class="table-responsive" id="excel-file-container">
+
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="modal-footer mg-t-15">
+                                                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-default waves-effect" id="save-excel-data">Save changes</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
 
 
 
 
 
 
+
+
+
+
+                                </div>
+                            </div>
+                            <div id="menu23" class="tab-pane animated zoomInLeft">
+                                <div class="tab-ctn">
+
+
+
+
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End Tabs on plain Card -->
+
             </div>
-
-            <div class=" col-sm-12 col-md-10  col-xl-4 ml-auto mr-auto">
-
-                @*<p class="category text-center">Tabs with Background on Card</p>*@
-                <!-- Tabs with Background on Card -->
-                <div class="card ">
-
-
-
-
-
-
-                    <div class="card-header">
-
-                    </div>
-                    <div class="card-body ">
-
-
-
-
-                        <p class="card-title text-center category">Card title</p>
-                        <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
-                    </div>
-                </div>
-                <!-- End Tabs on plain Card -->
-            </div>
-
-
         </div>
     </div>
 </div>
-
-<h3></h3>
 @section Styles
     {
-
-    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    @*<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />*@
-    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" rel="stylesheet" />
-
-
-
-    <link href="@Url.Content("~/lib/chosen-select/bootstrap-chosen.css")" rel="stylesheet" />
-
-    <link href="@Url.Content("~/lib/bootstrap-tagsinput/tagsinput.css")" rel="stylesheet" />
-    <link href="@Url.Content("~/lib/dropzone/dropzone.css")" rel="stylesheet" />
-
-
-
+    <link rel="stylesheet" href="@Url.Content("~/css/chosen/chosen.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/jquery.dataTables.min.css")">
     <style>
-        tbody {
-            font-size: 12px;
-        }
 
-        thead {
-            font-size: 14px;
-        }
-
-        .custom-file-label {
-            color: #222;
-            font-size: 14px;
-            border-radius: 30px;
-        }
-
-            .custom-file-label::after {
-                border-bottom-right-radius: 30px;
-                border-top-right-radius: 30px;
-                color: #fff;
-                font-weight: 400;
-                font-size: 14px;
-                background-color: #6bd098;
-                border-left: 1px solid #ced4da;
-            }
-
-
-
-
-
-
-
-
-
-
-        .card-body .sk-loading .sk-cube-grid {
-            display: none;
-        }
-
-        .card-body.sk-loading {
-            position: relative;
-        }
-
-            .card-body.sk-loading:after {
-                content: '';
-                background-color: rgba(255, 255, 255, 0.7);
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-
-
-
-        .sk-loading .sk-cube-grid {
-            width: 40px;
-            height: 40px;
-            display: block;
+        #file {
             position: absolute;
-            margin: auto;
-            top: 0;
-            left: 0;
+            font-size: 50px;
+            opacity: 0;
             right: 0;
-            bottom: 0;
-            z-index: 2000;
-        }
-
-        .sk-cube-grid .sk-cube {
-            width: 33%;
-            height: 33%;
-            background-color: #6bd098;
-            float: left;
-            -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-            animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-        }
-
-        .sk-cube-grid .sk-cube1 {
-            -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s;
-        }
-
-        .sk-cube-grid .sk-cube2 {
-            -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s;
-        }
-
-        .sk-cube-grid .sk-cube3 {
-            -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s;
-        }
-
-        .sk-cube-grid .sk-cube4 {
-            -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s;
-        }
-
-        .sk-cube-grid .sk-cube5 {
-            -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s;
-        }
-
-        .sk-cube-grid .sk-cube6 {
-            -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s;
-        }
-
-        .sk-cube-grid .sk-cube7 {
-            -webkit-animation-delay: 0s;
-            animation-delay: 0s;
-        }
-
-        .sk-cube-grid .sk-cube8 {
-            -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s;
-        }
-
-        .sk-cube-grid .sk-cube9 {
-            -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s;
-        }
-
-        @@-webkit-keyframes sk-cubeGridScaleDelay {
-            0%, 70%, 100% {
-                -webkit-transform: scale3D(1, 1, 1);
-                transform: scale3D(1, 1, 1);
-            }
-
-            35% {
-                -webkit-transform: scale3D(0, 0, 1);
-                transform: scale3D(0, 0, 1);
-            }
-        }
-
-        @@keyframes sk-cubeGridScaleDelay {
-            0%, 70%, 100% {
-                -webkit-transform: scale3D(1, 1, 1);
-                transform: scale3D(1, 1, 1);
-            }
-
-            35% {
-                -webkit-transform: scale3D(0, 0, 1);
-                transform: scale3D(0, 0, 1);
-            }
+            top: 0;
         }
     </style>
 }
 @section Scripts
     {
-
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-
-
-    <script src="@Url.Content("~/lib/chosen-select/chosen.jquery.js")"></script>
-
-
-    <script src="@Url.Content("~/lib/bootstrap-tagsinput/tagsinput.js")"></script>
-    <script src="@Url.Content("~/lib/dropzone/dropzone.js")"></script>
+    <script src="@Url.Content("~/js/chosen/chosen.jquery.js")"></script>
+    <script src="@Url.Content("~/js/data-table/jquery.dataTables.min.js")"></script>
 
     <script>
-        $(document).ready(function() {
-            $("input[id=excelFile]").change(function() {
-
-                var fieldVal = $(this).val();
-                fieldVal = fieldVal.replace("C:\\fakepath\\", "");
-                if (fieldVal != undefined || fieldVal != "") {
-
-                    $(this).next(".custom-file-label").text(fieldVal);
-                }
-
-            });
 
 
-            $('#wordsTable').DataTable({
-                pageLength: 25,
-                responsive: true,
-
-                rowReorder: {
-                    selector: 'td:nth-child(2)'
-                },
-                dom: 'B <"row"<"col-md-6"l><"col-md-6"f>>rtip',
-                buttons: [
-                    {
-                        extend: 'excel',
-                        text: 'Export Excel',
-                        className: 'btn btn-outline-danger  btn-round btn-xs',
-                        filename: 'Export excel',
-                        exportOptions: {
-                            modifier: {
-                                page: 'all'
-                            }
-                        }
-                    },
-                ]
+        $.fn.hasAttr = function ( name )
+        {
+            return this.attr( name ) !== undefined;
+        };
 
 
-            });
+
+        $(function() {
 
 
-            $(".chosen-select").chosen({ width: "100%" });
-
-            $('#spinner').toggleClass('sk-loading');
-
-
-            $('#excelUpload').click(function() {
-                var formFile = new FormData();
-                var excelFile = $("#excelFile")[0].files[0];
-                formFile.append("excelFile", excelFile);
-                console.log(formFile);
-
-
-                $.ajax({
-                    type: "POST",
-                    url: '@Url.Action("ReadExcelFile")',
-                    dataType: "json",
-                    data: formFile,
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    async: false,
-                    success: function(data) {
-                        var appendDiv = $("#excelFileContent");
-
-                        appendUploadedExcelContent(appendDiv, data);
-
-
-                    },
-                    failure: function(response) {
-                        alert(response);
-                    }
+            $(".chosen")[0] &&
+                $(".chosen").chosen({
+                    width: "100%",
+                    allow_single_deselect: !0
                 });
+        });
+        $("#file").change(function() {
 
-            });
+            var fieldVal = $(this).val();
+            fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+            if (fieldVal != undefined || fieldVal != "") {
 
-            function appendUploadedExcelContent(divId, data) {
-                var navTabs = "", tabContent = "", tableHeader = "";
-
-
-                for ( var i = 0; i < data.length; i++ )
-                {
-                    var tableContent = "";
-                    tableHeader = "";
-                    navTabs += `
-                                            <li class="nav-item">
-                                                <a class="nav-link  " data-toggle="tab" href="#tab-${i}" role="tab" aria-selected="false">
-                                                    <i class="now-ui-icons education_paper"></i> ${data[i].sheetLabel}
-                                                </a>
-                                            </li>
-        `;
-
-
-                    for (var j = 0; j < data[i].excelHeader.length; j++) {
-                        tableHeader += `<th>${data[i].excelHeader[j]}</th>`;
-                    }
-                    for (var j = 0; j < data[i].excelRow.length; j++) {
-                        var cell = "";
-                        console.log( data[i].excelRow[j]);
-                        for ( var e = 0; e < data[i].excelRow[j].excelCell.length; e++) {
-                            cell += ` <th >${data[i].excelRow[j].excelCell[e]}</th>`;
-
-                        }
-                        tableContent += ` <tr>
-                                            ${cell}
-                                            </tr>`;
-
-                    }
-
-                    tabContent += `
-                                         <div class="tab-pane " id="tab-${i}" role="tabpanel">
-
-                     <table id="table-${i}" class="table table-striped table-bordered display compact" style="width: 100%">
-                                    <thead>
-                                        <tr>
-                                           ${tableHeader}
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                            ${tableContent}
-                                    </tbody>
-
-                                </table>
-
-
-                                            </div>`;
-                }
-                $(divId).append(`<div class="justify-content-md-center">
-                                        <ul class="nav nav-tabs justify-content-center" role="tablist">
-                                            ${navTabs}
-                                         </ul>
-                                         <div class="tab-content ">
-                                            ${tabContent}
-                                       </div>
-                                    </div>`);
-
-                //var _data = [
-                //];
-
-                for (var i = 0; i < data.length; i++) {
-
-                    var tableId = `table-${i}`;
-
-                    $(`#${tableId}`).DataTable({
-                        pageLength: 10,
-                        responsive: true,
-                        rowReorder: {
-                            selector: 'td:nth-child(2)'
-                        },
-                        dom: '<"row"<"col-md-6"l><"col-md-6"f>>rtip',
-
-
-                    });
-
-                }
-
+                $("#file-label").val(fieldVal);
             }
 
         });
-    </script>
 
+        $('#submit-file').click(function() {
+            var formFile = new FormData();
+            var excelFile = $("#file")[0].files[0];
+            formFile.append("excelFile", excelFile);
+
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ReadExcelFile")',
+                processData: false, // tell jQuery not to process the data
+                contentType: false, // tell jQuery not to set contentType
+                data: formFile,
+                success: function(data) {
+                    //console.log( data);
+                    $("#excel-file-container").html(data);
+
+                    var tables = $("#excel-file-container table");
+                    $.each(tables,
+                        function(index, value) {
+                            $(value).DataTable();
+                        });
+
+
+                    $( "#table-modal" ).modal( 'show' );
+
+                    $(".chosen")[0] &&
+                        $(".chosen").chosen({
+                            width: "100%",
+                            allow_single_deselect: !0
+                        });
+
+                },
+                failure: function(response) {
+                    alert(response);
+                }
+            });
+
+        });
+        $("#save-excel-data").on('click',
+            function() {
+                alert();
+
+
+
+                var objectsList = $( '.objectList' );
+
+                objectsList.each( function ( i, val )
+                {
+                    var headerName = $( this ).attr( 'name-header' );
+
+
+                    $( this ).find( '.objectChild' ).each( function ( j, val )
+                    {
+                        $( this ).find( 'input , select' ).each( function ( c, val )
+                        {
+
+                            if ( $( this ).hasAttr( 'name' ) )
+                            {
+                                var endName = $( this ).attr( 'name' );
+                                var name = headerName + `[${j}]` + "." + endName;
+                                $( this ).attr( 'name', name );
+                            }
+
+                        } );
+                    } );
+
+
+                } );
+
+            });
+
+    </script>
 }

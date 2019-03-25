@@ -11,9 +11,10 @@ using Worstore.AccessLayer.Entity;
 namespace Worstore.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20190206191136_DateAttrs_Added")]
+    partial class DateAttrs_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,36 +127,6 @@ namespace Worstore.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Worstore.Entities.Answer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime?>("DateCreated");
-
-                    b.Property<DateTime?>("DateDeleted");
-
-                    b.Property<DateTime?>("DateModified");
-
-                    b.Property<int>("FkWord");
-
-                    b.Property<bool>("IsTestTrue");
-
-                    b.Property<string>("Reply")
-                        .IsRequired()
-                        .HasMaxLength(255);
-
-                    b.Property<int>("Status");
-
-                    b.Property<int>("TestType");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FkWord");
-
-                    b.ToTable("Answer");
                 });
 
             modelBuilder.Entity("Worstore.Entities.ApplicationUser", b =>
@@ -309,15 +280,15 @@ namespace Worstore.Migrations
 
                     b.Property<string>("Label")
                         .IsRequired()
-                        .HasMaxLength(255);
+                        .HasMaxLength(100);
 
                     b.Property<string>("Pronunciation")
-                        .HasMaxLength(255);
+                        .HasMaxLength(100);
 
                     b.Property<int>("Status");
 
                     b.Property<string>("Tag")
-                        .HasMaxLength(255);
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -368,14 +339,6 @@ namespace Worstore.Migrations
                     b.HasOne("Worstore.Entities.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Worstore.Entities.Answer", b =>
-                {
-                    b.HasOne("Worstore.Entities.Word", "Word")
-                        .WithMany("Answers")
-                        .HasForeignKey("FkWord")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
